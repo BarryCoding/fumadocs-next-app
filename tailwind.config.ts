@@ -1,7 +1,8 @@
-import { createPreset } from 'fumadocs-ui/tailwind-plugin';
+import type { Config } from 'tailwindcss'
 
-/** @type {import('tailwindcss').Config} */
-export default {
+import { createPreset } from 'fumadocs-ui/tailwind-plugin'
+
+const config = {
   content: [
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
@@ -10,4 +11,6 @@ export default {
     './node_modules/fumadocs-ui/dist/**/*.js',
   ],
   presets: [createPreset()],
-};
+} satisfies Config
+
+export default config
